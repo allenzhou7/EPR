@@ -1,0 +1,64 @@
+﻿@model MVC_EF_SQLSERVE.Models.Cost
+
+@{
+    ViewBag.Title = "进货删除";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>进货删除</h2>
+
+<h3>确定删除该出货记录?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CostDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="删除" class="btn btn-default" /> |
+            @Html.ActionLink("返回列表", "Index")
+        </div>
+    }
+</div>

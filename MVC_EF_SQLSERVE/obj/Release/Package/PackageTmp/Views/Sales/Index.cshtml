@@ -1,0 +1,91 @@
+﻿@model IEnumerable<MVC_EF_SQLSERVE.Models.Sale>
+
+@{
+    ViewBag.Title = "出货查询";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>出货查询</h2>
+
+<p>
+    @Html.ActionLink(" 新增 ", "Create")    | 
+    @Html.ActionLink(" 筛选数据 ", "Search")    |
+    @Html.ActionLink(" 导出 ", "ExportExcel", new { target = "_blank" })
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SaleDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Length)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Colour)
+        </th>
+        <th style="text-align:right">
+            @Html.DisplayNameFor(model => model.Number)
+        </th>
+        <th style="text-align:right">
+            @Html.DisplayNameFor(model => model.Count)
+        </th>
+        <th style="text-align:right">
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th style="text-align:right">
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SaleDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Length)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Colour)
+        </td>
+        <td style="text-align:right">
+            @Html.DisplayFor(modelItem => item.Number)
+        </td>
+        <td style="text-align:right">
+            @Html.DisplayFor(modelItem => item.Count)
+        </td>
+        <td style="text-align:right">
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td style="text-align:right">
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.ActionLink("复制", "Create", new { id = item.SaleID }) |
+            @Html.ActionLink("修改", "Edit", new { id=item.SaleID }) |
+            @Html.ActionLink("删除", "Delete", new { id=item.SaleID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MVC_EF_SQLSERVE.Models.Cost>
+
+@{
+    ViewBag.Title = "进货查询";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>进货查询</h2>
+
+<p>
+    @Html.ActionLink("新增", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CostDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.ActionLink("修改", "Edit", new { id=item.CostID }) |
+            @*@Html.ActionLink("详细", "Details", new { id=item.CostID }) |*@
+            @Html.ActionLink("删除", "Delete", new { id=item.CostID })
+        </td>
+    </tr>
+}
+
+</table>

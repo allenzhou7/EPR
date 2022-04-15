@@ -1,0 +1,58 @@
+﻿@model MVC_EF_SQLSERVE.Models.Cost
+
+@{
+    ViewBag.Title = "出货详细";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>出货详细</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CostDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("修改", "Edit", new { id = Model.CostID }) |
+    @Html.ActionLink("返回列表", "Index")
+</p>

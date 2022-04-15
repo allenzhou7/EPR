@@ -1,0 +1,56 @@
+﻿@model MVC_EF_SQLSERVE.Models.Product
+
+@{
+    ViewBag.Title = "产品删除";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>产品删除</h2>
+
+<h3>确定删除该产品?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Length)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Length)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Colour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Colour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="删除" title="删除" class="btn btn-default" /> |
+            @Html.ActionLink("返回列表", "Index")
+        </div>
+    }
+</div>

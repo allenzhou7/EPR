@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MVC_EF_SQLSERVE.Models.Product>
+
+@{
+    ViewBag.Title = "产品查询";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>产品查询</h2>
+
+<p>
+    @Html.ActionLink("新增", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Length)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Colour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Length)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Colour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.ActionLink("修改", "Edit", new { id=item.ProductID }) |
+            @*@Html.ActionLink("详细", "Details", new { id=item.ProductID }) |*@
+            @Html.ActionLink("删除", "Delete", new { id=item.ProductID })
+        </td>
+    </tr>
+}
+
+</table>
